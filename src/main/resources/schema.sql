@@ -1,4 +1,4 @@
-CREATE TABLE receipts (
+  CREATE TABLE receipts (
   id INT UNSIGNED AUTO_INCREMENT,
   uploaded TIME DEFAULT CURRENT_TIME(),
   merchant VARCHAR(255),
@@ -7,3 +7,13 @@ CREATE TABLE receipts (
 
   PRIMARY KEY (id)
 );
+
+  CREATE TABLE tags (
+  id INT UNSIGNED AUTO_INCREMENT,
+  uploaded TIME DEFAULT CURRENT_TIME(),
+  name VARCHAR(255),
+  receiptid INT UNSIGNED,
+
+  PRIMARY KEY (id)
+);
+

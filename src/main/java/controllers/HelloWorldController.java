@@ -18,6 +18,7 @@ public class HelloWorldController {
     @GET
     @Path("/hello")
     public String helloWorld(@Session HttpSession session) {
+
         return "Hello World " + session.toString();
     }
 }
