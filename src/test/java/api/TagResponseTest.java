@@ -4,6 +4,7 @@ package api;
 import generated.tables.records.ReceiptsRecord;
 import io.dropwizard.jersey.validation.Validators;
 import org.junit.Test;
+import org.junit.Before;
 
 import javax.validation.Validator;
 import java.math.BigDecimal;
@@ -17,12 +18,13 @@ import static org.hamcrest.collection.IsEmptyCollection.empty;
 public class TagResponseTest {
 
     private final Validator validator = Validators.newValidator();
-    private ReceiptsRecord record;
+
 
     @Test
-    public void testValid() {
-        TagResponse trecord = new TagResponse(record);
+    public void testMissingInfo(){
+        TagResponse tag = new TagResponse(new ReceiptsRecord());
+        validator.validate(tag);
+        assertThat(validator.validate(tag), hasSize(1));
 
-        assertThat(validator.validate(trecord), empty());
     }
 }
