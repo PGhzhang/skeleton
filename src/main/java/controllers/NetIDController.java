@@ -17,9 +17,9 @@ public class NetIDController {
 
     @GET
     @Path("/netid")
-    public String getNetID(@Session HttpSession session){
+    public String getNetID(){
 
-        return "hz464" + session.toString();
+        return "hz464";
 
     }
 
